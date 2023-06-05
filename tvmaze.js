@@ -123,8 +123,5 @@ async function searchForShowAndDisplay(evt) {
   populateEpisodes(episodes);
 }
 
-// async function getEpisodesOfShow(id) { }
+$showsList.on("click", ".Show-getEpisodes", searchForShowAndDisplay);
 
-/** Write a clear docstring for this function... */
-
-// function populateEpisodes(episodes) { }

@@ -12,7 +12,16 @@ const $searchForm = $("#searchForm");
  *    (if no image URL given by API, put in a default image URL)
  */
 
-async function getShowsByTerm( /* term */) {
+async function getShowsByTerm(term) {
+    const response = await axios({
+      baseURL: TVMAZE_API_URL,
+      url: "search/shows",
+      method: "GET",
+      params: {
+        q: term
+      },
+    });
+    
   // ADD: Remove placeholder & make request to TVMaze search shows API.
 
   return [

@@ -101,6 +101,23 @@ async function getEpisodesOfShow(id) {
   }));
 }
 
+function populateEpisodes(episodes) {
+  $episodesList.empty();
+
+  for (let episode of episodes) {
+    const $item = $(
+      `<li>
+      ${episode.name} 
+      (season ${episode.season}, episode ${episode.number})
+      </li>`
+    );
+
+    $episodesList.append($item);
+  }
+
+  $episodesList.show();
+}
+
 // async function getEpisodesOfShow(id) { }
 
 /** Write a clear docstring for this function... */

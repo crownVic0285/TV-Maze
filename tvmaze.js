@@ -93,6 +93,14 @@ async function getEpisodesOfShow(id) {
     method: "GET",
   });
 
+  return response.data.map((episode) => ({
+    id: episode.id,
+    name: episode.name,
+    season: episode.season,
+    number: episode.number,
+  }));
+}
+
 // async function getEpisodesOfShow(id) { }
 
 /** Write a clear docstring for this function... */

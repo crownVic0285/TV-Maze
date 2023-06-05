@@ -117,6 +117,11 @@ function populateEpisodes(episodes) {
 
   $episodesList.show();
 }
+async function searchForShowAndDisplay(evt) {
+  const showId = $(evt.target).closest(".Show").data("show-id");
+  const episodes = await getEpisodesOfShow(showId);
+  populateEpisodes(episodes);
+}
 
 // async function getEpisodesOfShow(id) { }
 
